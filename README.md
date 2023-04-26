@@ -1,4 +1,4 @@
-# code-coverage-cxx-qt
+# code-coverage-cpp-qt
 Code coverage em c++ com Qt
 
 # TODO REVISAR TODO NO code_coverage.sh
