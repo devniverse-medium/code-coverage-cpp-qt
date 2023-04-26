@@ -10,8 +10,17 @@ CODE_COVERAGE {
     QMAKE_LFLAGS += --coverage
 }
 
+DESTDIR = build
+
+OBJECTS_DIR = $$DESTDIR/.obj
+MOC_DIR = $$DESTDIR/.moc
+RCC_DIR = $$DESTDIR/.qrc
+UI_DIR = $$DESTDIR/.u
+
 SOURCES += \
-    calc.cpp
+    calc.cpp \
+    example.cpp
 
 HEADERS += \
-    calc.h
+    calc.h \
+    example.h

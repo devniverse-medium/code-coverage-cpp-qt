@@ -1,13 +1,10 @@
 #!/bin/sh
 
-# TODO AJUSTAR PARA GERAR NA PASTA build
-BUILD_DIR=../build-code-coverage-cpp-qt-Desktop_Qt_6_5_0_GCC_64bit-Debug
+find . -type f -name "qrc_*.gcno" -delete
+find . -type f -name "qrc_*.gcda" -delete
+find . -type f -name 'moc_*.gcda' -delete
+find . -type f -name 'moc_*.gcno' -delete
 
-rm -rf coverage
-mkdir -p coverage/html
+rm -rf coverage && mkdir -p coverage
 
-# TODO REVISAR SE SAO ESSES COMANDOS MESMO
-lcov -d ${BUILD_DIR} -c -o coverage/coverage.info
-lcov -r coverage/coverage.info -o coverage/coverage-filtered.info
-genhtml -o coverage/html coverage/coverage-filtered.info
-
+gcovr --html-details coverage/coverage.html
